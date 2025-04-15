@@ -1,0 +1,21 @@
+name: Deploy HTML Portfolio to Azure
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Azure Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ 5164d0992a2490dd4c2dde5d516c4d1e6879bd7633f75907fce5cfe1ba82afd106-bb532c47-b645-40b7-9fe8-6a747ace4512003190106d4d1a03 }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_location: "/"
