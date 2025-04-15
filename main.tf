@@ -21,8 +21,7 @@ resource "azurerm_resource_group" "portfolio" {
 resource "azurerm_static_site" "portfolio" {
   name                = "ismael-portfolio"
   resource_group_name = azurerm_resource_group.portfolio.name
-  location            = "westeurope"  # Static Web Apps are not available in every region, West Europe is closest to UK
-
+  location            = "westeurope"  
   sku_tier = "Free"
   sku_size = "Free"
 
