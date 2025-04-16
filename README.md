@@ -27,7 +27,6 @@ Every code change triggers an automated deployment to the live site with zero ma
 
 ---
 
-## 📸 Screenshots
 
 ### 🌐 Live Portfolio Homepage
 
