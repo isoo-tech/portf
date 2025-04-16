@@ -1087,6 +1087,11 @@
                 
                 console.log('Font Awesome was not loaded properly. Reloading...');
             }
+            
+            // Test if social links are working correctly
+            console.log("LinkedIn link: " + document.querySelector('a[href*="linkedin.com"]').href);
+            console.log("Email link: " + document.querySelector('a[href^="mailto"]').href);
+            console.log("GitHub link: " + document.querySelector('a[href*="github.com"]').href);
         });
 
         // Scroll Animation
@@ -1119,32 +1124,23 @@
             this.reset();
         });
         
-        // Mobile Menu Toggle - Fixed
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            
-            hamburger.addEventListener('click', function(e) {
-                e.stopPropagation(); // Prevent click from bubbling to document
-                this.classList.toggle('active');
-                navLinks.classList.toggle('show');
-            });
-            
-            // Close menu when clicking a nav link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', function() {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('show');
-                });
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('show');
-                }
-            });
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            navLinks.classList.toggle('show');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                navLinks.classList.remove('show');
+            }
         });
         
         // Smooth scrolling for navigation links
@@ -1155,18 +1151,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-
-        // Test function to check if links are working
-        function testLinks() {
-            console.log("Testing LinkedIn link: ", document.querySelector('a[href*="linkedin.com"]').href);
-            console.log("Testing Email link: ", document.querySelector('a[href^="mailto"]').href);
-        }
-        
-        // Call test function when page loads
-        window.addEventListener('load', function() {
-            testLinks();
-            // Rest of load event code...
         });
     </script>
 </body>
