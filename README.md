@@ -23,7 +23,7 @@ Every code change triggers an automated deployment to the live site with zero ma
 | Terraform       | Infrastructure as Code (IaC)   |
 | Azure Static Web Apps | Cloud Hosting               |
 | GitHub Actions  | Continuous Integration & Deployment |
-| HTML/CSS        | Portfolio Frontend             |
+| HTML            | Portfolio Frontend             |
 
 ---
 
