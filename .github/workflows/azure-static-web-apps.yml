@@ -28,6 +28,7 @@ jobs:
           app_location: "/public" 
           api_location: ""
           output_location: ""
+          deployment_environment: "Production"
           action: "upload"
           
   close_pull_request_job:
